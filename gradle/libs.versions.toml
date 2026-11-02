@@ -1,0 +1,62 @@
+[versions]
+agp = "8.6.1"
+kotlin = "1.9.22" # Ensure your KSP version is compatible with this Kotlin version
+coreKtx = "1.16.0"
+junit = "4.13.2"
+junitVersion = "1.2.1"
+espressoCore = "3.5.0"
+lifecycleRuntimeKtx = "2.9.0"
+# activityCompose = "1.9.2" # This can often be removed if BOM handles activity-compose version
+composeBom = "2024.06.00"
+# materialIconsCore = "1.7.8" # material-icons-core and extended are usually part of Compose BOM or have their own group/versioning
+ksp = "1.9.22-1.0.17"
+room = "2.6.1"
+databindingAdapters = "8.10.0"
+runner = "1.6.2" # Or "2.7.1" if you want the absolute latest stable, check official docs
+androidxComposeUi = "1.6.7"
+lifecycle = "2.8.0"
+uiTestAndroid = "1.6.8"
+workRuntimeKtx = "2.10.1"
+material = "1.12.0"
+
+[libraries]
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+# androidx-material-icons-core = { module = "androidx.compose.material:material-icons-core", version.ref = "materialIconsCore" }
+# androidx-material-icons-extended = { module = "androidx.compose.material:material-icons-extended", version.ref = "materialIconsCore" }
+# These are typically:
+androidx-material-icons-core = { group = "androidx.compose.material", name = "material-icons-core" } # Version from BOM
+androidx-material-icons-extended = { group = "androidx.compose.material", name = "material-icons-extended" } # Version from BOM
+
+androidx-work-runtime-ktx = { module = "androidx.work:work-runtime-ktx", version.ref = "workRuntimeKtx" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
+androidx-lifecycle-viewmodel-compose = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "lifecycle" }
+# Compose BOM
+androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
+androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4", version.ref = "androidxComposeUi" }
+# Compose Libraries (versions managed by the BOM)
+androidx-ui = { group = "androidx.compose.ui", name = "ui" }
+androidx-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
+androidx-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
+androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
+androidx-activity-compose = { group = "androidx.activity", name = "activity-compose" } # Version from BOM
+androidx-foundation = { group = "androidx.compose.foundation", name = "foundation" } # Version from BOM
+
+# Room Persistence Libraries
+androidx-room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
+androidx-room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
+androidx-room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
+androidx-room-testing = { group = "androidx.room", name = "room-testing", version.ref = "room" }
+androidx-databinding-adapters = { group = "androidx.databinding", name = "databinding-adapters", version.ref = "databindingAdapters" }
+androidx-runner = { group = "androidx.test", name = "runner", version.ref = "runner" }
+androidx-ui-test-android = { group = "androidx.compose.ui", name = "ui-test-android", version.ref = "uiTestAndroid" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" } # Optional for testing
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+google-ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }

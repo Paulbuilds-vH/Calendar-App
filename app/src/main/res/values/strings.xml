@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">WochenKalender</string>
+    <string name="notification_channel_name">Event Reminders</string>
+    <string name="notification_channel_description">Notifications for upcoming calendar events and birthdays.</string>
+
+    <!-- Original Notification Titles (keep these if you have other notification types or fallbacks) -->
+    <string name="notification_title_birthday">Birthday Today: %1$s</string>
+    <string name="notification_title_event">Event Today: %1$s</string>
+    <string name="notification_default_description">Reminder for %1$s today.</string>
+
+    <!-- NEW: Notification Titles and Descriptions for "Tomorrow" -->
+    <string name="notification_title_birthday_tomorrow">Birthday Tomorrow: %1$s</string>
+    <string name="notification_title_event_tomorrow">Event Tomorrow: %1$s</string>
+    <string name="notification_default_description_tomorrow">Reminder for %1$s tomorrow.</string>
+
+</resources>
